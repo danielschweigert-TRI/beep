@@ -25,6 +25,7 @@ summary:
   charge_duration: 'float32'
   time_temperature_integrated: 'float64'
   paused: 'int8'
+  cycle_type: 'category'
 
 diagnostic_summary:
   discharge_capacity: 'float64'

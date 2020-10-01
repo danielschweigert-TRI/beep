@@ -638,6 +638,7 @@ class RawCyclerRunTest(unittest.TestCase):
         self.assertEqual(summary["cycle_index"].tolist(), list(range(0, 13)))
         self.assertEqual(len(summary.index), len(summary["date_time_iso"]))
         self.assertEqual(summary["paused"].max(), 0)
+        self.assertIn('cycle_type', summary.columns.values)
 
     def test_get_energy(self):
         cycler_run = RawCyclerRun.from_file(self.arbin_file)

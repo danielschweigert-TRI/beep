@@ -72,6 +72,7 @@ from beep.conversion_schemas import (
 )
 
 from beep.utils import KinesisEvents, WorkflowOutputs
+from beep.utils.classification import CycleClassifier
 from beep import logger, __version__
 
 s = {"service": "DataStructurer"}
@@ -458,6 +459,10 @@ class RawCyclerRun(MSONable):
 
         # Determine if any of the cycles has been paused
         summary["paused"] = self.data.groupby("cycle_index").apply(determine_paused)
+
+        # cycle types
+        cycle_classifier = CycleClassifier()
+        summary['cycle_type'] = cycle_classifier.apply_cycle_type_classification(self.data)
 
         summary = summary.astype(STRUCTURE_DTYPES["summary"])
 
