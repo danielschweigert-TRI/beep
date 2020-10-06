@@ -48,7 +48,7 @@ class CycleClassifier:
     Formats incoming cycler raw data and applies classification model to determine cycle type.
     """
 
-    MODEL_FILE_PATH = os.path.join(MODEL_DIR,'classification/model_201_1189.torch')
+    MODEL_FILE_PATH = os.path.join(MODEL_DIR, 'classification/model_201_1189.torch')
     CYCLE_TYPES = ['exposure', 'reset', 'hppc', 'rpt_0.2C', 'rpt_1C', 'rpt_2C']
     
     def __init__(self):
