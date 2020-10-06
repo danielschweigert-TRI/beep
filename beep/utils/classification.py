@@ -50,7 +50,7 @@ class CycleClassifier:
 
     MODEL_FILE_PATH = os.path.join(MODEL_DIR, 'classification/model_201_1189.torch')
     CYCLE_TYPES = ['exposure', 'reset', 'hppc', 'rpt_0.2C', 'rpt_1C', 'rpt_2C']
-    
+
     def __init__(self):
         dev = torch.device('cpu')
         self.model = CycleClassificationModel(2, 100, 6, dev)
