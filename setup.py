@@ -42,7 +42,7 @@ setup(name="beep",
                         "tables==3.6.1",
                         "pydash==4.5.0",
                         "lmfit==1.0.1",
-                        "torch>=1.6.0"
+                        "torch"
                         ],
       extras_require={
           "tests": ["pytest-cov",
